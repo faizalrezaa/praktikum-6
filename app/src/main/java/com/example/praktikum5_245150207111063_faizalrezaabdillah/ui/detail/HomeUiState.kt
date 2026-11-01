@@ -1,0 +1,2 @@
+package com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.detail
+
