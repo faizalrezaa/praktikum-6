@@ -1,6 +1,5 @@
-package com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.theme
+package com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -34,7 +33,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun Praktikum5_245150207111063_FaizalRezaAbdillahTheme(
+fun Praktikum6_245150207111063_FaizalRezaAbdillahTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

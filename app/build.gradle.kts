@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.praktikum5_245150207111063_faizalrezaabdillah"
+    namespace = "com.example.praktikum6_245150207111063_faizalrezaabdillah"
     compileSdk {
         version = release(37)
     }

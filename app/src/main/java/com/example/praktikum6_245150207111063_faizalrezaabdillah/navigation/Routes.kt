@@ -1,4 +1,4 @@
-package com.example.praktikum5_245150207111063_faizalrezaabdillah.navigation
+package com.example.praktikum_6_245150207111063_faizalrezaabdillah.navigation
 
 object Routes {
     const val HOME = "home"

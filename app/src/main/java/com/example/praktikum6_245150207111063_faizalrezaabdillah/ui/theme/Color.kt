@@ -1,4 +1,4 @@
-package com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.theme
+package com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

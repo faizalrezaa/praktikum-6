@@ -1,5 +1,5 @@
 
-package com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.navigation
+package com.example.praktikum_6_245150207111063_faizalrezaabdillah.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,21 +10,23 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.praktikum5_245150207111063_faizalrezaabdillah.navigation.Routes
-
-
-import com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.screen.AboutScreen
-import com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.screen.DetailScreen
-import com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.screen.HomeScreen
-import com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.screen.ProfileScreen
-import com.example.praktikum6_245150207111063_faizalrezaabdillah.data.repository.DefaultStudentRepository
 import com.example.praktikum6_245150207111063_faizalrezaabdillah.data.source.StudentLocalDataSource
 import com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.detail.DetailViewModel
+import com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.home.HomeViewModel
+import com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.screen.AboutScreen
+
+import com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.screen.ProfileScreen
+import com.example.praktikum_6_245150207111063_faizalrezaabdillah.data.repository.DefaultStudentRepository
+
+import com.example.praktikum_6_245150207111063_faizalrezaabdillah.navigation.Routes
+import com.example.praktikum_6_245150207111063_faizalrezaabdillah.ui.screen.DetailScreen
+
+import com.example.praktikum_6_245150207111063_faizalrezaabdillah.ui.screen.HomeScreen
+
 
 @Composable
 fun NavigationLabApp() {
 
-    // Dependency manual
     val dataSource = remember { StudentLocalDataSource() }
     val repository = remember { DefaultStudentRepository(dataSource) }
 
@@ -34,8 +36,19 @@ fun NavigationLabApp() {
         navController = navController,
         startDestination = Routes.HOME
     ) {
+
         composable(Routes.HOME) {
+
+            val homeViewModel: HomeViewModel = viewModel(
+                factory = HomeViewModel.factory(repository)
+            )
+
+            LaunchedEffect(Unit) {
+                homeViewModel.loadStudents()
+            }
+
             HomeScreen(
+                uiState = homeViewModel.uiState,
                 onOpenDetail = { id ->
                     navController.navigate(Routes.detail(id))
                 },
@@ -70,19 +83,25 @@ fun NavigationLabApp() {
 
             DetailScreen(
                 uiState = detailViewModel.uiState,
-                onBack = { navController.popBackStack() }
+                onBack = {
+                    navController.popBackStack()
+                }
             )
         }
 
         composable(Routes.PROFILE) {
             ProfileScreen(
-                onBack = { navController.popBackStack() }
+                onBack = {
+                    navController.popBackStack()
+                }
             )
         }
 
         composable(Routes.ABOUT) {
             AboutScreen(
-                onBack = { navController.popBackStack() }
+                onBack = {
+                    navController.popBackStack()
+                }
             )
         }
     }

@@ -1,5 +1,4 @@
-
-package com.example.praktikum5_245150207111063_faizalrezaabdillah.ui.screen
+package com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,11 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.praktikum6_245150207111063_faizalrezaabdillah.ui.detail.DetailUiState
 
 @Composable
-fun DetailScreen(
-    uiState: DetailUiState,
+fun AboutScreen(
     onBack: () -> Unit
 ) {
     Column(
@@ -24,18 +21,8 @@ fun DetailScreen(
             .padding(24.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        Text("Detail Student", style = MaterialTheme.typography.headlineMedium)
-        when {
-            uiState.errorMessage != null ->
-                Text(uiState.errorMessage)
-            uiState.student != null -> {
-                val student = uiState.student
-                Text("ID: ${student.id}")
-                Text("Nama: ${student.name}")
-                Text("Program: ${student.program}")
-                Text("Angkatan: ${student.year}")
-            }
-        }
+        Text("About", style = MaterialTheme.typography.headlineMedium)
+        Text("Aplikasi Praktikum Navigasi Compose")
         Button(onClick = onBack) {
             Text("Kembali")
         }

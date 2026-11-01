@@ -12,14 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Praktikum5_245150207111063_FaizalRezaAbdillah">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.praktikum_6_245150207111063_faizalrezaabdillah.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Praktikum5_245150207111063_FaizalRezaAbdillah"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

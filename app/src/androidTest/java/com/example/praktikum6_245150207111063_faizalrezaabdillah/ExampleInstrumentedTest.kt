@@ -1,4 +1,4 @@
-package com.example.praktikum5_245150207111063_faizalrezaabdillah
+package com.example.praktikum6_245150207111063_faizalrezaabdillah
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
